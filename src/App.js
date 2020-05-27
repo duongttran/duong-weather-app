@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 
-import { Button } from 'react-bootstrap';
+//import { Button } from 'react-bootstrap';
 import Loading from './Loading'
 
 export default class App extends Component {
@@ -15,7 +15,7 @@ export default class App extends Component {
     this.state = {
       weatherResult: null,
       isLoading: true,
-      city: "hochiminh"
+      city: "Ho Chi Minh City"
     }
   }
 
@@ -26,14 +26,14 @@ export default class App extends Component {
     let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`
     console.log("url", url)
     let data = await fetch(url)
-    if(data.ok) {
+    if (data.ok) {
       let result = await data.json()
       console.log("what's the result", result)
       this.setState({ weatherResult: result })
     } else {
       alert("openweathermap geo is not available")
     }
- 
+
   }
 
   getLocation = () => {
@@ -59,7 +59,7 @@ export default class App extends Component {
     // })
 
 
-    let data =  await fetch(url)
+    let data = await fetch(url)
 
 
     if (data.ok) {
@@ -71,7 +71,7 @@ export default class App extends Component {
       alert(`Error ${data.status} is ${data.statusText}`)
       // throw error;
     }
-    this.setState({city: cityName});
+    this.setState({ city: cityName });
   }
 
   componentDidMount() {
@@ -82,37 +82,46 @@ export default class App extends Component {
 
   render() {
     const mapCity = {
-      "hochiminh": "hochiminh",
+      "Ho Chi Minh City": "hochiminh",
       "New+York": "newyork",
-      "Vancouver": "vancouver"
+      "Vancouver": "vancouver",
+      "Vancouver,US": "vancouver-us",
+      "San+Jose,US": "sanjose-us",
+      "San+Jose,CR": "sanjose-cr"
     }
 
     if (this.state.weatherResult == null) {
-      return <div className="loading-container"><Loading type="balls" color="red"></Loading></div>
+      return <div className="loading-container">
+        <Loading type="balls" color="red"></Loading></div>
     }
 
     return (
-      <div className={`text-white general-bgr ${mapCity[this.state.city]}`}>
-        <h1 className="text-center">Duong's weather app</h1>
-        
-        <div className="navi">
-          <button onClick={()=> this.getCity("New+York")}>New York city, USA</button>
-          <button onClick={()=> this.getCity("Vancouver")}>Vancouver, Canada</button>
-          <button onClick={()=> this.getCity("Vancouver,US")}>Vancouver, USA</button>
-          <button onClick={()=> this.getCity("San+Jose,US")}>San Jose, USA</button>
-          <button onClick={()=> this.getCity("San+Jose,CR")}>San Jose, Costa Rica</button>
-        </div>
+      <div className="blur-bgr">
+        <div className={`text-white general-bgr ${mapCity[this.state.city]}`}>
 
-        <div className="board city-image">
-          <h2>{this.state.weatherResult.main.temp}°C</h2>
-          <h3>{this.state.weatherResult.name}</h3>
-          <p>{this.state.weatherResult.weather[0].description}</p>
-          <Button variant="primary" onClick={()=> this.getCity()} >Primary</Button>
+
+          <div className="navi">
+          <a onClick={() => this.getCity("Ho Chi Minh City")}>Current Location</a>
+            <a onClick={() => this.getCity("New+York")}>New York city, USA</a>
+            <a onClick={() => this.getCity("Vancouver")}>Vancouver, Canada</a>
+            <a onClick={() => this.getCity("Vancouver,US")}>Vancouver, USA</a>
+            <a onClick={() => this.getCity("San+Jose,US")}>San Jose, USA</a>
+            <a onClick={() => this.getCity("San+Jose,CR")}>San Jose, Costa Rica</a>
+          </div>
+
+          <h1 className="text-center">Duong's weather app</h1>
+
+          <div className="board">
+            <h3 className="location">{this.state.weatherResult.name}</h3>
+            <p className="temperature">{this.state.weatherResult.main.temp}°C</p>
+
+            <p className="today-description">{this.state.weatherResult.weather[0].description}</p>
+            {/* <Button variant="primary" onClick={() => this.getCity()} >Primary</Button> */}
+          </div>
+
         </div>
 
       </div>
-
-
     )
   }
 }
