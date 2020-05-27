@@ -1,87 +1,89 @@
 .App {
-  text-align: center;  
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 body {
-  height: 10vh;
-  background-color: rgb(27, 27, 27);
-  font-family: 'Manrope', sans-serif;
-
+    height: 10vh;
+    background-color: rgb(27, 27, 27);
+    font-family: 'Manrope', sans-serif;
 }
 
 h1 {
-  margin: 50px 0 60px;
-  font-weight: 700;
-  font-size: 45px;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
+    margin: 50px 0 60px;
+    font-weight: 700;
+    font-size: 45px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
 }
 
 p {
-  font-size: 18px;
+    font-size: 18px;
 }
 
 .temperature {
-  font-size: 80px;
-  font-weight: 200;
+    font-size: 80px;
+    font-weight: 200;
 }
 
 .today-description {
-  text-transform: capitalize;
+    text-transform: capitalize;
 }
 
 .loading-container {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-
 .board {
-  background-color: rgba(22, 22, 22, 0.781);
-  width: 400px;
-  height: 500px;
-  padding: 30px;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  box-shadow: 5px 5px 15px rgba(207, 207, 207, 0.26);
+    background-color: rgba(22, 22, 22, 0.781);
+    width: 400px;
+    height: 500px;
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    box-shadow: 5px 5px 15px rgba(207, 207, 207, 0.26);
 }
 
 .location {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .navi {
-  display: flex;
-  justify-content: center;
-  height: 60px;
-  background-color: rgba(22, 22, 22, 0.692);
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    background-color: rgba(22, 22, 22, 0.692);
 }
 
-.navi a {
-  margin-right: 30px;
-  cursor: pointer;
-  margin-top: 18px;
-  opacity: .5;
-  transition: .5s;
-  
+button {
+    border: 0!important;
+    background-color: transparent;
+    color: white;
 }
 
-a:hover {
-  opacity: 1;
-  transition: .5s;
-  
+.navi button {
+    margin-right: 30px;
+    cursor: pointer;
+    opacity: .5;
+    transition: .5s;
 }
+
+button:hover {
+    opacity: 1;
+    transition: .5s;
+}
+
 
 /* 
 .blur-bgr {
@@ -92,55 +94,57 @@ a:hover {
   z-index: 1;
 } */
 
-
 .general-bgr {
-  min-height: 800px;
-  background-size: cover;
+    min-height: 800px;
+    background-size: cover;
 }
 
 .hochiminh {
-  background-image: url("https://wantsee.world/wp-content/uploads/2019/10/Ho-Chi-Minh-City.-Notre-Dame-Cathedral-Basilica-of-Saigon.jpg");
-} 
-
-.vancouver{
-  background-image: url("https://princeofwhales.com/wp-content/uploads/2019/05/Vancouver-Adventures.jpg");
+    background-image: url("https://wantsee.world/wp-content/uploads/2019/10/Ho-Chi-Minh-City.-Notre-Dame-Cathedral-Basilica-of-Saigon.jpg");
 }
 
-.vancouver-us{
-  background-image: url("https://i.pinimg.com/originals/82/60/11/826011997f2a8feed788a9585ac0a134.jpg");
+.vancouver {
+    background-image: url("https://princeofwhales.com/wp-content/uploads/2019/05/Vancouver-Adventures.jpg");
+}
+
+.vancouver-us {
+    background-image: url("https://i.pinimg.com/originals/82/60/11/826011997f2a8feed788a9585ac0a134.jpg");
 }
 
 .newyork {
-  background-image: url("https://www.telegraph.co.uk/content/dam/Travel/Destinations/North%20America/USA/New%20York/Nightlife/new-york-nightlife-times-square-p.jpg");
-} 
-
-.sanjose-us {
-  background-image: url("https://images.adsttc.com/media/images/5015/4321/28ba/0d02/f000/0a5a/large_jpg/stringio.jpg?1414028909");
-  background-position: bottom;
-} 
-
-.sanjose-cr {
-  background-image: url("https://cdn-image.departures.com/sites/default/files/1518554794/national-theater-san-jose-costa-rica-AMEXTRAVELCOSTARICA0218.jpg");
-} 
-
-@media (max-width: 850px) {
-    .navi{
-    display: flex;
-    justify-content: center;
-    height: 110px;
-    padding: 5px 10px;
-    background-color: rgba(22, 22, 22, 0.692);
-
-  }
-
-  .navi a {
-    margin-right: 30px;
-    cursor: pointer;
-    margin-top: 18px;
-    opacity: .5;
-    transition: .5s;
-    font-size: 12px;
-  }
+    background-image: url("https://www.telegraph.co.uk/content/dam/Travel/Destinations/North%20America/USA/New%20York/Nightlife/new-york-nightlife-times-square-p.jpg");
 }
 
+.sanjose-us {
+    background-image: url("https://images.adsttc.com/media/images/5015/4321/28ba/0d02/f000/0a5a/large_jpg/stringio.jpg?1414028909");
+    background-position: bottom;
+}
 
+.sanjose-cr {
+    background-image: url("https://cdn-image.departures.com/sites/default/files/1518554794/national-theater-san-jose-costa-rica-AMEXTRAVELCOSTARICA0218.jpg");
+}
+
+@media (max-width: 850px) {
+    .navi {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 110px;
+        /* padding: 5px 10px; */
+        background-color: rgba(22, 22, 22, 0.692);
+    }
+    .navi button {
+        margin-right: 30px;
+        cursor: pointer;
+        opacity: .5;
+        transition: .5s;
+        font-size: 12px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    .board {
+        max-width: 375px;
+        max-height: 400px;
+    }
+}

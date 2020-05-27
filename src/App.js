@@ -101,17 +101,18 @@ export default class App extends Component {
 
 
           <div className="navi">
-          <a onClick={() => this.getCity("Ho Chi Minh City")}>Current Location</a>
-            <a onClick={() => this.getCity("New+York")}>New York city, USA</a>
-            <a onClick={() => this.getCity("Vancouver")}>Vancouver, Canada</a>
-            <a onClick={() => this.getCity("Vancouver,US")}>Vancouver, USA</a>
-            <a onClick={() => this.getCity("San+Jose,US")}>San Jose, USA</a>
-            <a onClick={() => this.getCity("San+Jose,CR")}>San Jose, Costa Rica</a>
+            <button onClick={() => this.getCity("Ho Chi Minh City")}>Current Location</button>
+            <button onClick={() => this.getCity("New+York")}>New York city, USA</button>
+            <button onClick={() => this.getCity("Vancouver")}>Vancouver, Canada</button>
+            <button onClick={() => this.getCity("Vancouver,US")}>Vancouver, USA</button>
+            <button onClick={() => this.getCity("San+Jose,US")}>San Jose, USA</button>
+            <button onClick={() => this.getCity("San+Jose,CR")}>San Jose, Costa Rica</button>
           </div>
 
           <h1 className="text-center">Duong's weather app</h1>
 
           <div className="board">
+            {/* <p>${moment(Date.now()).format('lll')}</p> */}
             <h3 className="location">{this.state.weatherResult.name}</h3>
             <p className="temperature">{this.state.weatherResult.main.temp}°C</p>
 
