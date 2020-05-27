@@ -1,11 +1,56 @@
 .App {
-  text-align: center;
+  text-align: center;  
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+
+body {
+  height: 10vh;
+  background-color: #333;
+}
+
+
+.loading-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.board {
+  background-color: rgba(126, 126, 126, 0.445);
+  width: 400px;
+  height: 500px;
+  padding: 30px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+
+}
+
+.general-bgr {
+  min-height: 800px;
+  background-size: cover;
+}
+
+.vancouver{
+
+  background-image: url("https://res.cloudinary.com/simpleview/image/upload/v1486505969/clients/vancouverbc/Aerial_Sunset_Vancouver_d3_copy_1bb86ed0-1edc-4cda-841d-0b033ca0bb72.jpg");
+
+}
+
+.hochiminh {
+ 
+  background-image: url("https://new7wonders.com/app/uploads/sites/5/2016/10/ho-chi-minh-city-1348092-1920x1280.jpg");
+
+} 
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -36,3 +81,5 @@
     transform: rotate(360deg);
   }
 }
+
+
